@@ -1,0 +1,108 @@
+package smple;
+
+import java.net.URL;
+import java.until.ResourceBundle;
+import Javafx.fxml.FXML;
+import javafx.scene.control.Buttom;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+public class Controller {
+
+    @FXML
+    private ResourceBundle resources;
+
+    @FXML
+    private URL location;
+
+    @FXML
+    private TextField login_field;
+
+    @FXML
+    private PasswordField password_field;
+
+    @FXML
+    private Button authUnloadingButton;
+
+    @FXML
+    private Button LoginUnloadingButton;
+
+    @FXML
+    void initalize() {
+        authUnloadingButton.setOnAction(event ->
+                System.out.println(Вы нжаали на кнопку выгрузки);
+        try {
+            loader.load();
+            } catch (I0Exception e) {
+            e.printStackTrace();
+        }
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene());
+        )};
+
+}
+
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        Connection connection = null;
+        Statement statement = null;
+
+        System.out.println("Registering JDBC driver...");
+
+        Class.forName("com.mysql.jdbc.Driver");
+
+        System.out.println("Creating database connection...");
+        connection = DriverManager.getConnection(DATABASE_URL, USER, PASSWORD);
+
+        System.out.println("Executing statement...");
+        statement = connection.createStatement();
+
+        String sql;
+        sql = "SELECT * FROM developers";
+
+        ResultSet resultSet = statement.executeQuery(sql);
+
+        System.out.println("Retrieving data from database...");
+        System.out.println("\nDevelopers:");
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            String specialty = resultSet.getString("specialty");
+            int salary = resultSet.getInt("salary");
+
+            System.out.println("\n================\n");
+            System.out.println("id: " + id);
+            System.out.println("Name: " + name);
+            System.out.println("Specialty: " + specialty);
+            System.out.println("Salary: $" + salary);
+        }
+
+        System.out.println("Closing connection and releasing resources...");
+        resultSet.close();
+        statement.close();
+        connection.close();
+    }
+}
+ java.util.Date javaDate = new java.util.Date();
+         long javaTime = javaDate.getTime();
+
+         System.out.println("Current date and time (Java): " + javaDate.toString());
+         System.out.printf("Current time (Java): " + javaDate.getHours() + ":" +
+         javaDate.getMinutes() + ":"
+         + javaDate.getSeconds());
+
+         /**
+          * SQL Date and Time
+          */
+         java.sql.Timestamp sqlTimeStamp = new java.sql.Timestamp(javaTime);
+         java.sql.Date sqlDate = new java.sql.Date(javaTime);
+         java.sql.Time sqlTime = new java.sql.Time(javaTime);
+
+         System.out.println("\n=======================================\n");
+         System.out.println("Current timeStamp (SQL): " + sqlTimeStamp.toString());
+         System.out.println("Current date (SQL): " + sqlDate.toString());
+         System.out.println("Current time (SQL): " + sqlTime.toString());
+
+
+         }
+         }
